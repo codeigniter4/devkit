@@ -1,0 +1,48 @@
+{
+    "name": "codeigniter4/devkit",
+    "type": "library",
+    "description": "Development toolkit for CodeIgniter libraries and projects",
+    "keywords": [
+        "codeigniter",
+        "codeigniter4",
+        "devkit",
+        "toolkit",
+        "development",
+        "tools"
+    ],
+    "homepage": "https://github.com/codeigniter4/devkit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Gatner",
+            "email": "mgatner@tattersoftware.com",
+            "homepage": "https://tattersoftware.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "codeigniter/coding-standard": "^1.1",
+        "fakerphp/faker": "^1.9",
+        "mikey179/vfsstream": "^1.6",
+        "nexusphp/cs-config": "^3.1",
+        "nexusphp/tachycardia": "^1.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.3",
+        "roave/security-advisories": "dev-latest"
+    },
+    "require-dev": {
+        "codeigniter4/codeigniter4": "dev-develop"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/codeigniter4/CodeIgniter4"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
