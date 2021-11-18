@@ -39,6 +39,7 @@ locally they will need to be installed. All of them are available via [Phive](ht
 * [Infection](https://infection.github.io/)
 * [PHP Coveralls](https://php-coveralls.github.io/php-coveralls/)
 * [PHP CS Fixer](https://cs.symfony.com/)
+* [Rector](https://github.com/rectorphp/rector/)
 
 ## Source Files
 
@@ -119,6 +120,15 @@ into use in production. PHPUnit is a highly-configurable framework and suite for
 running unit tests. This workflow also configures PHPUnit to report on code coverage and
 upload the results to [Coveralls.io](https://coveralls.io) (you will need a free account,
 but it is also fine to use this workflow without Coveralls).
+
+#### Rector
+
+*Requires **rector.php***
+
+Rector provides automated refactoring of code, allowing you to make sweeping updates based on
+predefined rulesets. Rector can be highly opinionated based on its configuration file (**rector.php**)
+so be sure to read the documentation and figure out the best fit for you. This workflow performs
+a "dry run" to check for any changes that Rector would have made and fail if there are matches.
 
 #### Unused
 
