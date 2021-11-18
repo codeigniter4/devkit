@@ -48,7 +48,7 @@ they may need changing to fit your environment. These are based on the following
 1. Your default repository branch is set to `develop`
 2. You use Composer to manage all necessary dependencies
 3. Your source code is located in **app/** (for projects) or **src/** (for libraries)
-4. Your unit tests are located in **test/**
+4. Your unit tests are located in **tests/**
 5. Your CodeIgniter dependency is `codeigniter4/framework` (some paths need to be changed for `dev-develop`)
 
 ### Workflows
