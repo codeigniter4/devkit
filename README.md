@@ -130,6 +130,9 @@ predefined rulesets. Rector can be highly opinionated based on its configuration
 so be sure to read the documentation and figure out the best fit for you. This workflow performs
 a "dry run" to check for any changes that Rector would have made and fail if there are matches.
 
+> Note: Rector updates rules all the time so you may want to lock your repo to the latest known working version of Rector to prevent unexpected failures
+> E.g. in **.github/workflows/rector.yml** supply the specific minor patch: `composer global require --dev rector/rector:0.12.4`
+
 #### Unused
 
 Composer Unused does one thing: checks that your code actually uses the dependencies you

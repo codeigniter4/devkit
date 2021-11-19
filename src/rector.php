@@ -27,17 +27,15 @@ use Rector\EarlyReturn\Rector\If_\RemoveAlwaysElseRector;
 use Rector\EarlyReturn\Rector\Return_\PreparedValueToEarlyReturnRector;
 use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
 use Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector;
-use Rector\Php70\Rector\FuncCall\RandomFunctionRector;
-use Rector\Php71\Rector\FuncCall\CountOnNullRector;
 use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
 use Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector;
-use Rector\PHPUnit\Rector\MethodCall\AssertFalseStrposToContainsRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
+    // Rule sets to apply
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(LevelSetList::UP_TO_PHP_73);
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD);
@@ -45,51 +43,46 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters = $containerConfigurator->parameters();
 
-    // paths to refactor; solid alternative to CLI arguments
-    $parameters->set(Option::PATHS, [__DIR__ . '/app', __DIR__ . '/tests']);
+    // The paths to refactor (can also be supplied with CLI arguments)
+    $parameters->set(Option::PATHS, [
+        __DIR__ . '/app',
+        __DIR__ . '/tests',
+    ]);
 
-    // do you need to include constants, class aliases or custom autoloader? files listed will be executed
+    // Do you need to include constants, class aliases, or a custom autoloader?
     $parameters->set(Option::BOOTSTRAP_FILES, [
-        realpath(getcwd()) . '/vendor/autoload.php',
         realpath(getcwd()) . '/vendor/codeigniter4/framework/system/Test/bootstrap.php',
     ]);
 
-    // is there a file you need to skip?
+    // Set the target version for refactoring
+    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_73);
+
+    // Auto-import fully qualified class names
+    $parameters->set(Option::AUTO_IMPORT_NAMES, true);
+
+    // Are there files or rules you need to skip?
     $parameters->set(Option::SKIP, [
         __DIR__ . '/app/Views',
 
         JsonThrowOnErrorRector::class,
         StringifyStrNeedlesRector::class,
 
-        // requires php 8
+        // Note: requires php 8
         RemoveUnusedPromotedPropertyRector::class,
 
-        // call on purpose for nothing happen check
+        // Ignore tests that might make calls without a result
         RemoveEmptyMethodCallRector::class => [
             __DIR__ . '/tests',
         ],
 
-        // may cause load view files directly when detecting class that
-        // make warning
+        // May load view files directly when detecting classes
         StringClassNameToClassConstantRector::class,
 
-        // sometime too detail
-        CountOnNullRector::class,
-
-        // may not be unitialized on purpose
+        // May be uninitialized on purpose
         AddDefaultValueForUndefinedVariableRector::class,
-
-        // use mt_rand instead of random_int on purpose on non-cryptographically random
-        RandomFunctionRector::class,
-
-        // assertContains() to string can't be used in PHPUnit 9.1
-        AssertFalseStrposToContainsRector::class,
     ]);
 
-    // auto import fully qualified class names
-    $parameters->set(Option::AUTO_IMPORT_NAMES, true);
-    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_73);
-
+    // Additional rules to apply
     $services = $containerConfigurator->services();
     $services->set(SimplifyUselessVariableRector::class);
     $services->set(RemoveAlwaysElseRector::class);
