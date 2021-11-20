@@ -104,6 +104,11 @@ PHP Copy-Paste Detector analyzes your code and reports when there are blocks of 
 more than a certain number of lines long (default: 5). In most cases this is a sign of poor
 code structure and an opportunity to consolidate classes or functions.
 
+#### PHP CS Fixer
+
+PHP CS Fixer is used to enforce coding standards. Once the rules are defined in the config file
+the workflow will check your code against the definitions and fail for any deviance.
+
 #### PHPStan
 
 *Requires **phpstan.neon.dist***
