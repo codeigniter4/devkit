@@ -31,7 +31,7 @@ Development toolkit for CodeIgniter libraries and projects
 ### Additional Tools
 
 These are integrated into the workflows but not included via Composer. If you want to use them
-locally they will need to be installed. All of them are available via [Phive](https://phar.io/#Tools).
+locally they will need to be installed. All of them (except Rector) are available via [Phive](https://phar.io/#Tools).
 
 * [Composer Normalize](https://github.com/ergebnis/composer-normalize)
 * [Composer Unused](https://github.com/composer-unused/composer-unused)
