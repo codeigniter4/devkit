@@ -42,7 +42,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD);
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_80);
 
-
     $parameters = $containerConfigurator->parameters();
 
     $parameters->set(Option::PARALLEL, true);
