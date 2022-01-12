@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "codeigniter/coding-standard": "^1.1",
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
@@ -34,15 +34,6 @@
         "phpunit/phpunit": "^9.3",
         "roave/security-advisories": "dev-latest"
     },
-    "require-dev": {
-        "codeigniter4/codeigniter4": "dev-develop"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/codeigniter4/CodeIgniter4"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
