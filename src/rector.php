@@ -38,7 +38,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator): void {
     // Rule sets to apply
     $containerConfigurator->import(SetList::DEAD_CODE);
-    $containerConfigurator->import(LevelSetList::UP_TO_PHP_73);
+    $containerConfigurator->import(LevelSetList::UP_TO_PHP_74);
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD);
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_80);
 
