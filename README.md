@@ -41,10 +41,10 @@ locally they will need to be installed. All of them (except Rector) are availabl
 * [PHP CS Fixer](https://cs.symfony.com/)
 * [Rector](https://github.com/rectorphp/rector/)
 
-## Source Files
+## Template Files
 
-The provided source files should be considered guidelines or templates for your own use, as
-they may need changing to fit your environment. These are based on the following assumptions:
+The provided source files (in **Template/**) should be considered guidelines for your own use,
+as they may need changing to fit your environment. These are based on the following assumptions:
 
 1. Your default repository branch is set to `develop`
 2. You use Composer to manage all necessary dependencies
@@ -56,7 +56,7 @@ they may need changing to fit your environment. These are based on the following
 
 This kit includes a number of workflow templates for integrating [GitHub Actions](https://docs.github.com/en/actions)
 into your library or project development process. To add these to your repo simply copy the
-workflows into a **.github/workflows/** directory.
+workflows into a **Template/.github/workflows/** directory.
 
 > Hint: the [source files](src/.github) also include a configuration for Dependabot which will help keep your dependencies and workflows updated.
 
@@ -136,10 +136,16 @@ so be sure to read the documentation and figure out the best fit for you. This w
 a "dry run" to check for any changes that Rector would have made and fail if there are matches.
 
 > Note: Rector updates rules all the time so you may want to lock your repo to the latest known working version of Rector to prevent unexpected failures
-> E.g. in **.github/workflows/rector.yml** supply the specific minor patch: `composer global require --dev rector/rector:0.12.4`
+> E.g. in **Template/.github/workflows/rector.yml** supply the specific minor patch: `composer global require --dev rector/rector:0.12.4`
 
 #### Unused
 
 Composer Unused does one thing: checks that your code actually uses the dependencies you
 have included via Composer. It can be easy to forget to update your **composer.json** when
 your code drops a dependency, so this workflow will help track those down.
+
+## Example Files
+
+Besides the template files, this repo includes some examples for integrating CodeIgniter
+with other third-party resources. These files (in **Examples/**) may change over time and
+should not be relied on for anything more than a reference for your own code.
