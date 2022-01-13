@@ -33,4 +33,4 @@ jobs:
           coverage: none
 
       - name: Detect duplicate code
-        run: phpcpd app/ src/ tests/
+        run: phpcpd app/ tests/
