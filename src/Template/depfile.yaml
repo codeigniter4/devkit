@@ -1,5 +1,5 @@
 paths:
-  - ./app
+  - ./app/
   - ./vendor/codeigniter4/framework/system
 exclude_files:
   - '#.*test.*#i'

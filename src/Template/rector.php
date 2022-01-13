@@ -47,8 +47,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::PARALLEL, true);
     // The paths to refactor (can also be supplied with CLI arguments)
     $parameters->set(Option::PATHS, [
-        __DIR__ . '/app',
-        __DIR__ . '/tests',
+        __DIR__ . '/app/',
+        __DIR__ . '/tests/',
     ]);
 
     // Do you need to include constants, class aliases, or a custom autoloader?

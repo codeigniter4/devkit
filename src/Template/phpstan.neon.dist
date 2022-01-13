@@ -7,8 +7,8 @@ parameters:
 	bootstrapFiles:
 		- vendor/codeigniter4/framework/system/Test/bootstrap.php
 	excludePaths:
-		- src/Config/Routes.php
-		- src/Views/*
+		- app/Config/Routes.php
+		- app/Views/*
 	ignoreErrors:
 		- '#Call to an undefined static method Config\\Services::[A-Za-z]+\(\)#'
 	universalObjectCratesClasses:

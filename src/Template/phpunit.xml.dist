@@ -21,7 +21,7 @@
 
 	<coverage includeUncoveredFiles="true" processUncoveredFiles="true">
 		<include>
-			<directory suffix=".php">./app</directory>
+			<directory suffix=".php">./app/</directory>
 		</include>
 		<exclude>
 			<directory suffix=".php">./app/Config</directory>
