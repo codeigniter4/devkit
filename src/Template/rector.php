@@ -57,7 +57,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     ]);
 
     // Set the target version for refactoring
-    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_73);
+    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_74);
 
     // Auto-import fully qualified class names
     $parameters->set(Option::AUTO_IMPORT_NAMES, true);
