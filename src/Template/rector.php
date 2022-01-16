@@ -21,6 +21,7 @@ use Rector\Core\Configuration\Option;
 use Rector\Core\ValueObject\PhpVersion;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector;
 use Rector\DeadCode\Rector\MethodCall\RemoveEmptyMethodCallRector;
+use Rector\DeadCode\Rector\StaticCall\RemoveParentCallWithoutParentRector;
 use Rector\EarlyReturn\Rector\Foreach_\ChangeNestedForeachIfsToEarlyContinueRector;
 use Rector\EarlyReturn\Rector\If_\ChangeIfElseValueAssignToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\If_\RemoveAlwaysElseRector;
@@ -74,6 +75,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
         // Ignore tests that might make calls without a result
         RemoveEmptyMethodCallRector::class => [
+            __DIR__ . '/tests',
+        ],
+
+        // Ignore tests that should always call parent setUp/tearDown
+        RemoveParentCallWithoutParentRector::class => [
             __DIR__ . '/tests',
         ],
 
