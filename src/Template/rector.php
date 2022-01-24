@@ -61,6 +61,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         realpath(getcwd()) . '/vendor/codeigniter4/framework/system/Test/bootstrap.php',
     ]);
 
+    if (is_file(__DIR__ . '/phpstan.neon.dist')) {
+        $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, __DIR__ . '/phpstan.neon.dist');
+    }
+
     // Set the target version for refactoring
     $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_74);
 
