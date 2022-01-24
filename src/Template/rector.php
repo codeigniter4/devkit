@@ -51,6 +51,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/tests/',
     ]);
 
+    // Include Composer's autoload - required for global execution, remove if running locally
+    $parameters->set(Option::AUTOLOAD_PATHS, [
+        __DIR__ . '/vendor/autoload.php',
+    ]);
+
     // Do you need to include constants, class aliases, or a custom autoloader?
     $parameters->set(Option::BOOTSTRAP_FILES, [
         realpath(getcwd()) . '/vendor/codeigniter4/framework/system/Test/bootstrap.php',
@@ -75,6 +80,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         // Ignore tests that might make calls without a result
         RemoveEmptyMethodCallRector::class => [
             __DIR__ . '/tests',
+        ],
+
+        // Ignore files that should not be namespaced
+        NormalizeNamespaceByPSR4ComposerAutoloadRector::class => [
+            __DIR__ . '/app/Helpers',
         ],
 
         // May load view files directly when detecting classes
