@@ -29,6 +29,7 @@ use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
 use Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector;
 use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
 use Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector;
+use Rector\Php74\Rector\Property\TypedPropertyRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\PSR4\Rector\FileWithoutNamespace\NormalizeNamespaceByPSR4ComposerAutoloadRector;
 use Rector\Set\ValueObject\LevelSetList;
@@ -122,4 +123,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(MakeInheritedMethodVisibilitySameAsParentRector::class);
     $services->set(SimplifyEmptyArrayCheckRector::class);
     $services->set(NormalizeNamespaceByPSR4ComposerAutoloadRector::class);
+    $services->set(TypedPropertyRector::class)
+        ->configure([
+            TypedPropertyRector::INLINE_PUBLIC => true,
+        ]);
 };
