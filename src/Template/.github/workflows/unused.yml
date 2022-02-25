@@ -67,4 +67,4 @@ jobs:
           fi
 
       - name: Detect unused packages
-        run: composer-unused -vvv --ansi --no-interaction --no-progress --excludePackage=php
+        run: composer-unused -vvv --output-format=github --ansi --no-interaction --no-progress
