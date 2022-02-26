@@ -47,16 +47,6 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: Create PHPStan cache directory
-        run: mkdir -p build/phpstan
-
-      - name: Cache PHPStan results
-        uses: actions/cache@v2
-        with:
-          path: build/phpstan
-          key: ${{ runner.os }}-phpstan-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-phpstan-
-
       - name: Install dependencies
         run: |
           composer -q config -g github-oauth.github.com "${{ secrets.GITHUB_TOKEN }}"
