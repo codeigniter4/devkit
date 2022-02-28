@@ -6,14 +6,14 @@ on:
       - develop
     paths:
       - '**.php'
-      - 'composer.**'
+      - 'composer.*'
       - '.github/workflows/unused.yml'
   push:
     branches:
       - develop
     paths:
       - '**.php'
-      - 'composer.**'
+      - 'composer.*'
       - '.github/workflows/unused.yml'
 
 jobs:
