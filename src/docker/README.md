@@ -5,6 +5,7 @@
 - PostgreSQL 13
 - SQL Server 2019
 - MySQL 5.7
+- MailHog
 
 ## Usage
 
@@ -65,3 +66,17 @@ database.default.password = mysql
 database.default.DBDriver = MySQLi
 database.default.port     = 3306
 ```
+
+### MailHog
+
+#### .env
+
+```
+email.protocol = smtp
+email.SMTPHost = localhost
+email.SMTPPort = 1025
+email.SMTPCrypto =
+email.fromEmail = info@example.com
+```
+
+Navigate to http://localhost:8025/ to see sent mails.
