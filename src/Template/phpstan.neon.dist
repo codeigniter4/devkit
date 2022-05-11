@@ -10,7 +10,6 @@ parameters:
 		- app/Config/Routes.php
 		- app/Views/*
 	ignoreErrors:
-		- '#Call to an undefined static method Config\\Services::[A-Za-z]+\(\)#'
 	universalObjectCratesClasses:
 		- CodeIgniter\Entity
 		- CodeIgniter\Entity\Entity
