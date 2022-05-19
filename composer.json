@@ -32,7 +32,8 @@
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.3",
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "vimeo/psalm": "^4.22"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -16,7 +16,8 @@ Development toolkit for CodeIgniter libraries and projects
 
 * [NexusPHP Tachycardia](https://github.com/NexusPHP/tachycardia)
 * [PHPStan](https://phpstan.org/user-guide/getting-started)
-* [PHPUnit](http://phpunit.readthedocs.io)
+* [PHPUnit](https://phpunit.readthedocs.io)
+* [Psalm](https://psalm.dev)
 
 ### Mocking
 
