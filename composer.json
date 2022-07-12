@@ -35,11 +35,29 @@
         "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^4.22"
     },
+    "require-dev": {
+        "codeigniter4/framework": "^4.1",
+        "icanhazstring/composer-unused": "^0.8.2",
+        "rector/rector": "0.13.5"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "phpstan/extension-installer": true
         }
+    },
+    "scripts": {
+        "analyze": [
+            "phpstan analyze",
+            "psalm",
+            "rector process --dry-run"
+        ],
+        "ci": [
+            "Composer\\Config::disableProcessTimeout",
+            "@analyze",
+            "@style"
+        ],
+        "style": "php-cs-fixer fix --verbose --ansi --using-cache=no"
     }
 }
