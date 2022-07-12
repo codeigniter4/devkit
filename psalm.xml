@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="7"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    autoloader="psalm_autoload.php"
+    cacheDirectory="build/psalm/"
+>
+    <projectFiles>
+        <directory name="src/" />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <file name="src/ide/phpstorm/.phpstorm.meta.php" />
+            <file name="src/Template/composer-unused.php" />
+            <file name="src/Template/psalm_autoload.php" />
+        </ignoreFiles>
+    </projectFiles>
+</psalm>
