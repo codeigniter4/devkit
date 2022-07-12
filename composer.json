@@ -1,7 +1,8 @@
 {
     "name": "codeigniter4/devkit",
-    "type": "library",
     "description": "Development toolkit for CodeIgniter libraries and projects",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "codeigniter",
         "codeigniter4",
@@ -10,8 +11,6 @@
         "development",
         "tools"
     ],
-    "homepage": "https://github.com/codeigniter4/devkit",
-    "license": "MIT",
     "authors": [
         {
             "name": "Matthew Gatner",
@@ -20,6 +19,7 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/codeigniter4/devkit",
     "require": {
         "php": "^7.4 || ^8.0",
         "codeigniter/coding-standard": "^1.1",
