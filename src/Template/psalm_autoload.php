@@ -10,6 +10,10 @@ $helperDirs = [
 ];
 
 foreach ($helperDirs as $dir) {
+    if (! is_dir($dir)) {
+        continue;
+    }
+
     $dir = __DIR__ . '/' . $dir;
     chdir($dir);
 
