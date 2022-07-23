@@ -9,7 +9,7 @@
 - MySQL 5.7
 - MailHog
 
-## Usage
+## Setup
 
 Copy `docker/` folder and `docker-compose.yaml` to your CodeIgniter4 project root.
 
@@ -22,6 +22,10 @@ CodeIgniter4/
 ├── docker-compose.yaml ... add
 ├── public/
 ```
+
+Edit `docker-compose.yaml` to comment out unnecessary services.
+
+## Usage
 
 Create and start containers:
 ```
