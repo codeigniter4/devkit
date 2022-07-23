@@ -16,10 +16,10 @@ Copy `docker/` folder and `docker-compose.yaml` to your CodeIgniter4 project roo
 ```
 CodeIgniter4/
 ├── app/
-├── docker/            ... add
+├── docker/             ... add
 │   ├── nginx/
 │   └── phpfpm/
-├── docker-compose.yml ... add
+├── docker-compose.yaml ... add
 ├── public/
 ```
 
