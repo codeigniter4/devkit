@@ -80,6 +80,7 @@ See https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker
 
 ```
 database.default.hostname = localhost
+#database.default.hostname = mysql
 database.default.database = test
 database.default.username = mysql
 database.default.password = mysql
@@ -94,6 +95,7 @@ database.default.port     = 3306
 ```
 email.protocol = smtp
 email.SMTPHost = localhost
+#email.SMTPHost = mailhog
 email.SMTPPort = 1025
 email.SMTPCrypto =
 email.fromEmail = info@example.com
