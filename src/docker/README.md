@@ -2,6 +2,8 @@
 
 ## Included
 
+- Nginx 1.23
+- PHP-FPM 8.1
 - PostgreSQL 13
 - SQL Server 2019
 - MySQL 5.7
@@ -9,12 +11,26 @@
 
 ## Usage
 
+Copy `docker/` folder and `docker-compose.yaml` to your CodeIgniter4 project root.
+
+```
+CodeIgniter4/
+├── app/
+├── docker/            ... add
+│   ├── nginx/
+│   └── phpfpm/
+├── docker-compose.yml ... add
+├── public/
+```
+
+Create and start containers:
 ```
 $ docker-compose up -d
 ```
 
+Stop services:
 ```
-$ docker-compose down
+$ docker-compose stop
 ```
 
 ## Config
