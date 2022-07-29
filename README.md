@@ -146,13 +146,7 @@ Composer Unused does one thing: checks that your code actually uses the dependen
 have included via Composer. It can be easy to forget to update your **composer.json** when
 your code drops a dependency, so this workflow will help track those down.
 
-## Example Files
-
-Besides the template files, this repo includes some examples for integrating CodeIgniter
-with other third-party resources. These files (in **Examples/**) may change over time and
-should not be relied on for anything more than a reference for your own code.
-
-## Hosting with Vagrant
+### Hosting with Vagrant
 
 > **Note**
 > The `Vagrantfile.dist` is unmaintained. It does not work now.
@@ -163,10 +157,10 @@ plan to deploy on, even if you develop on a different one.
 Even if you are using the same platform for both, virtualization provides an
 isolated environment for testing.
 
-The codebase comes with a **src/Vagrantfile.dist**, that can be copied to **Vagrantfile**
+The codebase comes with a **src/Template/Vagrantfile.dist**, that can be copied to **Vagrantfile**
 and tailored for your system, for instance enabling access to specific database or caching engines.
 
-### Setting Up
+#### Setting Up
 
 It assumes that you have installed [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and
 [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -178,7 +172,7 @@ The Vagrant configuration file assumes you have set up a [ubuntu/bionic64 Vagran
 > vagrant box add ubuntu/bionic64
 ```
 
-### Testing
+#### Testing
 
 Once set up, you can then launch your webapp inside a VM, with the command:
 
@@ -189,3 +183,9 @@ Once set up, you can then launch your webapp inside a VM, with the command:
 Your webapp will be accessible at http://localhost:8080, with the code coverage
 report for your build at http://localhost:8081 and the user guide for
 it at http://localhost:8082.
+
+## Example Files
+
+Besides the template files, this repo includes some examples for integrating CodeIgniter
+with other third-party resources. These files (in **Examples/**) may change over time and
+should not be relied on for anything more than a reference for your own code.
