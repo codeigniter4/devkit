@@ -1,4 +1,5 @@
 # CodeIgniter DevKit
+
 Development toolkit for CodeIgniter libraries and projects
 
 ## Installation
@@ -144,6 +145,44 @@ a "dry run" to check for any changes that Rector would have made and fail if the
 Composer Unused does one thing: checks that your code actually uses the dependencies you
 have included via Composer. It can be easy to forget to update your **composer.json** when
 your code drops a dependency, so this workflow will help track those down.
+
+### Hosting with Vagrant
+
+> **Note**
+> The `Vagrantfile.dist` is unmaintained. It might not work now.
+> Contributions are welcome.
+
+Virtualization is an effective way to test your webapp in the environment you
+plan to deploy on, even if you develop on a different one.
+Even if you are using the same platform for both, virtualization provides an
+isolated environment for testing.
+
+The codebase comes with a **src/Template/Vagrantfile.dist**, that can be copied to **Vagrantfile**
+and tailored for your system, for instance enabling access to specific database or caching engines.
+
+#### Setting Up
+
+It assumes that you have installed [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and
+[Vagrant](https://www.vagrantup.com/downloads.html)
+for your platform.
+
+The Vagrant configuration file assumes you have set up a [ubuntu/bionic64 Vagrant box](https://app.vagrantup.com/ubuntu/boxes/bionic64) on your system:
+
+```console
+> vagrant box add ubuntu/bionic64
+```
+
+#### Testing
+
+Once set up, you can then launch your webapp inside a VM, with the command:
+
+```console
+> vagrant up
+```
+
+Your webapp will be accessible at http://localhost:8080, with the code coverage
+report for your build at http://localhost:8081 and the user guide for
+it at http://localhost:8082.
 
 ## Example Files
 
