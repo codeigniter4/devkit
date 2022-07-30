@@ -149,7 +149,7 @@ your code drops a dependency, so this workflow will help track those down.
 ### Hosting with Vagrant
 
 > **Note**
-> The `Vagrantfile.dist` is unmaintained. It does not work now.
+> The `Vagrantfile.dist` is unmaintained. It might not work now.
 > Contributions are welcome.
 
 Virtualization is an effective way to test your webapp in the environment you
