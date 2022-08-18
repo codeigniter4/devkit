@@ -53,11 +53,20 @@
             "psalm",
             "rector process --dry-run"
         ],
+        "sa": "@analyze",
         "ci": [
             "Composer\\Config::disableProcessTimeout",
+            "@cs-fix",
+            "@deduplicate",
+            "@inspect",
             "@analyze",
-            "@style"
+            "@test"
         ],
-        "style": "php-cs-fixer fix --verbose --ansi --using-cache=no"
+        "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff --using-cache=yes",
+        "style": "@cs-fix",
+        "deduplicate": "phpcpd app/ src/",
+        "inspect": "deptrac analyze --cache-file=build/deptrac.cache",
+        "mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit"
     }
 }
