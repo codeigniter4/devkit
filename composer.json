@@ -56,7 +56,7 @@
         "sa": "@analyze",
         "ci": [
             "Composer\\Config::disableProcessTimeout",
-            "@cs-fix",
+            "@cs",
             "@deduplicate",
             "@inspect",
             "@analyze",
