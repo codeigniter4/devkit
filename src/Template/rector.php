@@ -30,13 +30,14 @@ use Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector;
 use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
 use Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector;
 use Rector\Php74\Rector\Property\TypedPropertyRector;
+use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\PSR4\Rector\FileWithoutNamespace\NormalizeNamespaceByPSR4ComposerAutoloadRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 
 return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->sets([SetList::DEAD_CODE, LevelSetList::UP_TO_PHP_74, PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD, PHPUnitSetList::PHPUNIT_80]);
+    $rectorConfig->sets([SetList::DEAD_CODE, LevelSetList::UP_TO_PHP_74, PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD, PHPUnitLevelSetList::UP_TO_PHPUNIT_100]);
     $rectorConfig->parallel();
     // The paths to refactor (can also be supplied with CLI arguments)
     $rectorConfig->paths([
