@@ -9,7 +9,8 @@
         "devkit",
         "toolkit",
         "development",
-        "tools"
+        "tools",
+        "static analysis"
     ],
     "authors": [
         {
