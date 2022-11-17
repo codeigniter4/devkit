@@ -18,3 +18,5 @@ foreach ($helperDirs as $dir) {
         require_once $filePath;
     }
 }
+
+chdir(__DIR__);
