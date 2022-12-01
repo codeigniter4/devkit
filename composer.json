@@ -34,7 +34,7 @@
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.3",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^4.22"
+        "vimeo/psalm": "^4.22 || ^5.0"
     },
     "require-dev": {
         "codeigniter4/framework": "^4.1",
