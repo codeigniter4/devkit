@@ -1,6 +1,5 @@
 <?php
 
-use Rector\Config\RectorConfig;
 use Rector\CodeQuality\Rector\BooleanAnd\SimplifyEmptyArrayCheckRector;
 use Rector\CodeQuality\Rector\Expression\InlineIfToExplicitIfRector;
 use Rector\CodeQuality\Rector\For_\ForToForeachRector;
@@ -18,6 +17,7 @@ use Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector;
 use Rector\CodingStyle\Rector\ClassMethod\FuncGetArgsToVariadicParamRector;
 use Rector\CodingStyle\Rector\ClassMethod\MakeInheritedMethodVisibilitySameAsParentRector;
 use Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector;
+use Rector\Config\RectorConfig;
 use Rector\Core\ValueObject\PhpVersion;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector;
 use Rector\DeadCode\Rector\MethodCall\RemoveEmptyMethodCallRector;
@@ -29,11 +29,11 @@ use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
 use Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector;
 use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
 use Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector;
-use Rector\Php74\Rector\Property\TypedPropertyRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\PSR4\Rector\FileWithoutNamespace\NormalizeNamespaceByPSR4ComposerAutoloadRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
+use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromAssignsRector;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets([SetList::DEAD_CODE, LevelSetList::UP_TO_PHP_74, PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD, PHPUnitSetList::PHPUNIT_80]);
@@ -112,8 +112,8 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->rule(SimplifyEmptyArrayCheckRector::class);
     $rectorConfig->rule(NormalizeNamespaceByPSR4ComposerAutoloadRector::class);
     $rectorConfig
-        ->ruleWithConfiguration(TypedPropertyRector::class, [
+        ->ruleWithConfiguration(TypedPropertyFromAssignsRector::class, [
             // Set to false if you use in libraries, or it does create breaking changes.
-            TypedPropertyRector::INLINE_PUBLIC => true,
+            TypedPropertyFromAssignsRector::INLINE_PUBLIC => true,
         ]);
 };
