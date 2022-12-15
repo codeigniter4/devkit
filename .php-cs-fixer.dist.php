@@ -10,7 +10,10 @@ $finder = Finder::create()
         __DIR__ . '/src/',
     ])
     ->exclude('build')
-    ->append([__FILE__]);
+    ->append([
+        __FILE__,
+        __DIR__ . '/rector.php',
+    ]);
 
 $overrides = [];
 
