@@ -127,7 +127,10 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->rule(NormalizeNamespaceByPSR4ComposerAutoloadRector::class);
     $rectorConfig
         ->ruleWithConfiguration(TypedPropertyFromAssignsRector::class, [
-            // Set to false if you use in libraries, or it does create breaking changes.
+            /**
+             * The INLINE_PUBLIC value is default to false to avoid BC break, if you use for libraries and want to preserve BC break, you don't need to configure it, as it included in LevelSetList::UP_TO_PHP_74
+             * Set to true for projects that allow BC break
+             */
             TypedPropertyFromAssignsRector::INLINE_PUBLIC => true,
         ]);
     $rectorConfig->rule(StringClassNameToClassConstantRector::class);
