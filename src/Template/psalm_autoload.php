@@ -10,11 +10,11 @@ $helperDirs = [
 ];
 
 foreach ($helperDirs as $dir) {
+    $dir = __DIR__ . '/' . $dir;
     if (! is_dir($dir)) {
         continue;
     }
 
-    $dir = __DIR__ . '/' . $dir;
     chdir($dir);
 
     foreach (glob('*_helper.php') as $filename) {
@@ -23,3 +23,5 @@ foreach ($helperDirs as $dir) {
         require_once $filePath;
     }
 }
+
+chdir(__DIR__);

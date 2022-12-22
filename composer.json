@@ -9,7 +9,8 @@
         "devkit",
         "toolkit",
         "development",
-        "tools"
+        "tools",
+        "static analysis"
     ],
     "authors": [
         {
@@ -22,10 +23,10 @@
     "homepage": "https://github.com/codeigniter4/devkit",
     "require": {
         "php": "^7.4 || ^8.0",
-        "codeigniter/coding-standard": "^1.1",
+        "codeigniter/coding-standard": "^1.5",
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
-        "nexusphp/cs-config": "^3.1",
+        "nexusphp/cs-config": "^3.6",
         "nexusphp/tachycardia": "^1.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.0",
@@ -33,12 +34,12 @@
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.3",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^4.22"
+        "vimeo/psalm": "^5.0"
     },
     "require-dev": {
         "codeigniter4/framework": "^4.1",
         "icanhazstring/composer-unused": "^0.8.2",
-        "rector/rector": "0.14.0"
+        "rector/rector": "0.15.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -63,10 +64,11 @@
             "@test"
         ],
         "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
-        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff --using-cache=yes",
+        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff",
         "style": "@cs-fix",
         "deduplicate": "phpcpd app/ src/",
         "inspect": "deptrac analyze --cache-file=build/deptrac.cache",
-        "mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit"
+        "mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit",
+        "test": "phpunit"
     }
 }
