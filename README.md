@@ -4,7 +4,13 @@ Development toolkit for CodeIgniter libraries and projects
 
 ## Installation
 
-* Install via Composer: `> composer require --dev codeigniter4/devkit`
+Install via Composer:
+
+```console
+composer config minimum-stability dev
+composer config prefer-stable true
+composer require --dev codeigniter4/devkit
+```
 
 ## Included Dependencies
 
