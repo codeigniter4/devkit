@@ -19,7 +19,6 @@ use Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector;
 use Rector\Config\RectorConfig;
 use Rector\Core\ValueObject\PhpVersion;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector;
-use Rector\DeadCode\Rector\MethodCall\RemoveEmptyMethodCallRector;
 use Rector\EarlyReturn\Rector\Foreach_\ChangeNestedForeachIfsToEarlyContinueRector;
 use Rector\EarlyReturn\Rector\If_\ChangeIfElseValueAssignToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\If_\RemoveAlwaysElseRector;
@@ -79,11 +78,6 @@ return static function (RectorConfig $rectorConfig): void {
 
         // Note: requires php 8
         RemoveUnusedPromotedPropertyRector::class,
-
-        // Ignore tests that might make calls without a result
-        RemoveEmptyMethodCallRector::class => [
-            __DIR__ . '/tests',
-        ],
 
         // May load view files directly when detecting classes
         StringClassNameToClassConstantRector::class,
