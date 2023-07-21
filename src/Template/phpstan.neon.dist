@@ -1,6 +1,6 @@
 parameters:
 	tmpDir: build/phpstan
-	level: 5
+	level: 6
 	paths:
 		- app/
 		- tests/
