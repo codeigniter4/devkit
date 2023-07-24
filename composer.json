@@ -50,6 +50,7 @@
     },
     "scripts": {
         "analyze": [
+            "Composer\\Config::disableProcessTimeout",
             "phpstan analyze",
             "psalm",
             "rector process --dry-run"
