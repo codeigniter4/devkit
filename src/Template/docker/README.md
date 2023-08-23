@@ -2,19 +2,39 @@
 
 ## Included
 
+- Nginx 1.23
+- PHP-FPM 8.1
 - PostgreSQL 13
 - SQL Server 2019
 - MySQL 5.7
 - MailHog
 
+## Setup
+
+Copy `docker/` folder and `docker-compose.yaml` to your CodeIgniter4 project root.
+
+```
+CodeIgniter4/
+├── app/
+├── docker/             ... add
+│   ├── nginx/
+│   └── phpfpm/
+├── docker-compose.yaml ... add
+├── public/
+```
+
+Edit `docker-compose.yaml` to comment out unnecessary services.
+
 ## Usage
 
+Create and start containers:
 ```
 $ docker-compose up -d
 ```
 
+Stop services:
 ```
-$ docker-compose down
+$ docker-compose stop
 ```
 
 ## Config
@@ -60,6 +80,7 @@ See https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker
 
 ```
 database.default.hostname = localhost
+#database.default.hostname = mysql
 database.default.database = test
 database.default.username = mysql
 database.default.password = mysql
@@ -74,6 +95,7 @@ database.default.port     = 3306
 ```
 email.protocol = smtp
 email.SMTPHost = localhost
+#email.SMTPHost = mailhog
 email.SMTPPort = 1025
 email.SMTPCrypto =
 email.fromEmail = info@example.com
