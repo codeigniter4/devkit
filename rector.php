@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Rector\CodeQuality\Rector\BooleanAnd\SimplifyEmptyArrayCheckRector;
 use Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector;
 use Rector\CodeQuality\Rector\Expression\InlineIfToExplicitIfRector;
@@ -26,6 +28,8 @@ use Rector\EarlyReturn\Rector\Return_\PreparedValueToEarlyReturnRector;
 use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
 use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
 use Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector;
+use Rector\PHPUnit\AnnotationsToAttributes\Rector\Class_\AnnotationWithValueToAttributeRector;
+use Rector\PHPUnit\CodeQuality\Rector\Class_\YieldDataProviderRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\Property\PrivatizeFinalClassPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
@@ -73,9 +77,11 @@ return static function (RectorConfig $rectorConfig): void {
 
         JsonThrowOnErrorRector::class,
         StringifyStrNeedlesRector::class,
+        YieldDataProviderRector::class,
 
         // Note: requires php 8
         RemoveUnusedPromotedPropertyRector::class,
+        AnnotationWithValueToAttributeRector::class,
 
         // May load view files directly when detecting classes
         StringClassNameToClassConstantRector::class,
