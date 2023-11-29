@@ -67,6 +67,25 @@ database.default.DBDriver = MySQLi
 database.default.port     = 3306
 ```
 
+### Oracle
+
+#### .env
+
+```
+NLS_LANG                = 'AMERICAN_AMERICA.UTF8'
+NLS_DATE_FORMAT         = 'YYYY-MM-DD HH24:MI:SS'
+NLS_TIMESTAMP_FORMAT    = 'YYYY-MM-DD HH24:MI:SS'
+NLS_TIMESTAMP_TZ_FORMAT = 'YYYY-MM-DD HH24:MI:SS'
+database.default.DSN      = localhost:1521/XEPDB1
+database.default.hostname =
+database.default.database =
+database.default.username = ORACLE
+database.default.password = ORACLE
+database.default.DBDriver = OCI8
+database.default.charset  = AL32UTF8
+database.default.port     = 1521
+```
+
 ### MailHog
 
 #### .env
