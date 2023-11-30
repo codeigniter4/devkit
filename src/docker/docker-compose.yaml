@@ -29,6 +29,15 @@ services:
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
 
+  oracle:
+    image: gvenzl/oracle-xe:21
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_RANDOM_PASSWORD: true
+      APP_USER: ORACLE
+      APP_USER_PASSWORD: ORACLE
+
   mailhog:
     image: mailhog/mailhog
     ports:
