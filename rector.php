@@ -21,7 +21,6 @@ use Rector\CodingStyle\Rector\ClassMethod\FuncGetArgsToVariadicParamRector;
 use Rector\CodingStyle\Rector\ClassMethod\MakeInheritedMethodVisibilitySameAsParentRector;
 use Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector;
 use Rector\Config\RectorConfig;
-use Rector\Core\ValueObject\PhpVersion;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector;
 use Rector\EarlyReturn\Rector\Foreach_\ChangeNestedForeachIfsToEarlyContinueRector;
 use Rector\EarlyReturn\Rector\If_\ChangeIfElseValueAssignToEarlyReturnRector;
@@ -39,6 +38,7 @@ use Rector\Set\ValueObject\SetList;
 use Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector;
 use Rector\TypeDeclaration\Rector\Empty_\EmptyOnNullableObjectToInstanceOfRector;
 use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromAssignsRector;
+use Rector\ValueObject\PhpVersion;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets([
