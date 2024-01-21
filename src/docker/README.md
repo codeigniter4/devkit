@@ -4,7 +4,8 @@
 
 - PostgreSQL 13
 - SQL Server 2019
-- MySQL 5.7
+- MySQL 8.0
+- Oracle Database 21c XE
 - MailHog
 
 ## Usage
