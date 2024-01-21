@@ -20,7 +20,7 @@ services:
       MSSQL_PID: Developer
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0
     ports:
       - "3306:3306"
     environment:
@@ -28,6 +28,15 @@ services:
       MYSQL_DATABASE: test
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
+
+  oracle:
+    image: gvenzl/oracle-xe:21
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_RANDOM_PASSWORD: true
+      APP_USER: ORACLE
+      APP_USER_PASSWORD: ORACLE
 
   mailhog:
     image: mailhog/mailhog
