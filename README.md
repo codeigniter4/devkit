@@ -66,7 +66,9 @@ This kit includes a number of workflow templates for integrating [GitHub Actions
 into your library or project development process. To add these to your repo simply copy the
 workflows into a **Template/.github/workflows/** directory.
 
-> Hint: the [source files](src/.github) also include a configuration for Dependabot which will help keep your dependencies and workflows updated.
+> [!TIP]
+> The [source files](src/.github) also include a configuration for Dependabot which
+> will help keep your dependencies and workflows updated.
 
 Below is a brief description of each workflow; see the links above for help with each tool.
 
@@ -143,7 +145,7 @@ predefined rulesets. Rector can be highly opinionated based on its configuration
 so be sure to read the documentation and figure out the best fit for you. This workflow performs
 a "dry run" to check for any changes that Rector would have made and fail if there are matches.
 
-> **Note**
+> [!NOTE]
 > Rector updates rules all the time, so you may want to lock your repo to
 > the latest known working version of Rector to prevent unexpected failures.
 > Using pinned version in `composer.json` and update it with dependabot is the
@@ -157,7 +159,7 @@ your code drops a dependency, so this workflow will help track those down.
 
 ### Hosting with Vagrant
 
-> **Note**
+> [!NOTE]
 > The `Vagrantfile.dist` is unmaintained. It might not work now.
 > Contributions are welcome.
 
