@@ -33,9 +33,9 @@
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.3",
+        "rector/rector": "^0.19 || ^1.0.0",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^5.0",
-        "rector/rector": "^0.19 || ^1.0.0"
+        "vimeo/psalm": "^5.0"
     },
     "require-dev": {
         "codeigniter4/framework": "^4.1",
@@ -55,7 +55,6 @@
             "psalm",
             "rector process --dry-run"
         ],
-        "sa": "@analyze",
         "ci": [
             "Composer\\Config::disableProcessTimeout",
             "@cs",
@@ -66,10 +65,11 @@
         ],
         "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
         "cs-fix": "php-cs-fixer fix --ansi --verbose --diff",
-        "style": "@cs-fix",
         "deduplicate": "phpcpd app/ src/",
         "inspect": "deptrac analyze --cache-file=build/deptrac.cache",
         "mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit",
+        "sa": "@analyze",
+        "style": "@cs-fix",
         "test": "phpunit"
     }
 }
