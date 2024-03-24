@@ -51,11 +51,11 @@ return static function (RectorConfig $rectorConfig): void {
 
     $rectorConfig->parallel();
 
-     // Github action cache
-     $rectorConfig->cacheClass(FileCacheStorage::class);
-     if (is_dir('/tmp')) {
-         $rectorConfig->cacheDirectory('/tmp/rector');
-     }
+    // Github action cache
+    $rectorConfig->cacheClass(FileCacheStorage::class);
+    if (is_dir('/tmp')) {
+        $rectorConfig->cacheDirectory('/tmp/rector');
+    }
 
     // The paths to refactor (can also be supplied with CLI arguments)
     $rectorConfig->paths([

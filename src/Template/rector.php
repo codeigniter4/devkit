@@ -51,7 +51,7 @@ return static function (RectorConfig $rectorConfig): void {
 
     $rectorConfig->parallel();
 
-     // Github action cache
+    // Github action cache
     $rectorConfig->cacheClass(FileCacheStorage::class);
     if (is_dir('/tmp')) {
         $rectorConfig->cacheDirectory('/tmp/rector');
