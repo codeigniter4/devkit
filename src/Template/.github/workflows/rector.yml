@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['7.4', '8.0', '8.1', '8.2']
+        php-versions: ['8.1', '8.2', '8.3', '8.4']
 
     steps:
       - name: Checkout
@@ -54,10 +54,15 @@ jobs:
 
       - name: Install dependencies
         run: |
+          OPTIONS='--no-progress --no-interaction --prefer-dist --optimize-autoloader'
+          if [[ '${{ matrix.php-versions }}' == '8.4' ]]; then
+            OPTIONS="$OPTIONS --ignore-platform-reqs"
+          fi
+
           if [ -f composer.lock ]; then
-            composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+            composer install $OPTIONS
           else
-            composer update --no-progress --no-interaction --prefer-dist --optimize-autoloader
+            composer update $OPTIONS
           fi
 
       - name: Rector Cache
