@@ -47,7 +47,7 @@ use Rector\ValueObject\PhpVersion;
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets([
         SetList::DEAD_CODE,
-        LevelSetList::UP_TO_PHP_74,
+        LevelSetList::UP_TO_PHP_81,
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
         PHPUnitSetList::PHPUNIT_100,
     ]);
@@ -81,7 +81,7 @@ return static function (RectorConfig $rectorConfig): void {
     }
 
     // Set the target version for refactoring
-    $rectorConfig->phpVersion(PhpVersion::PHP_74);
+    $rectorConfig->phpVersion(PhpVersion::PHP_81);
 
     // Auto-import fully qualified class names
     $rectorConfig->importNames();
