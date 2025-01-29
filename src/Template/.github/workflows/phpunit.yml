@@ -53,15 +53,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          OPTIONS="${{ env.COMPOSER_UPDATE_FLAGS }} --no-progress --no-interaction --prefer-dist --optimize-autoloader"
-          if [[ '${{ matrix.php-versions }}' == '8.4' ]]; then
-            OPTIONS="$OPTIONS --ignore-platform-reqs"
-          fi
-
           if [ -f composer.lock ]; then
-            composer install $OPTIONS
+            composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
           else
-            composer update $OPTIONS
+            composer update --no-progress --no-interaction --prefer-dist --optimize-autoloader
           fi
 
       - name: Test with PHPUnit
