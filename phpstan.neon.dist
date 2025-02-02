@@ -6,8 +6,7 @@ parameters:
 	bootstrapFiles:
 		- vendor/codeigniter4/framework/system/Test/bootstrap.php
 	excludePaths:
-		- src/Config/Routes.php
-		- src/Views/*
+		- src/docker/*
 	ignoreErrors:
 	universalObjectCratesClasses:
 		- CodeIgniter\Entity
