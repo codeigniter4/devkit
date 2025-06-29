@@ -43,7 +43,7 @@ locally they will need to be installed. All of them (except Rector) are availabl
 
 * [Composer Normalize](https://github.com/ergebnis/composer-normalize)
 * [Composer Unused](https://github.com/composer-unused/composer-unused)
-* [Deptrac](https://github.com/qossmic/deptrac)
+* [Deptrac](https://github.com/deptrac/deptrac)
 * [Infection](https://infection.github.io/)
 * [PHP Coveralls](https://php-coveralls.github.io/php-coveralls/)
 * [PHP CS Fixer](https://cs.symfony.com/)
