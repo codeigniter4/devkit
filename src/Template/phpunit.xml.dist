@@ -4,7 +4,10 @@
     bootstrap="vendor/codeigniter4/framework/system/Test/bootstrap.php"
     backupGlobals="false"
     beStrictAboutOutputDuringTests="true"
+    beStrictAboutCoverageMetadata="true"
+    cacheDirectory="build/.phpunit.cache"
     colors="true"
+    displayDetailsOnAllIssues="true"
     executionOrder="random"
     failOnRisky="true"
     failOnWarning="true"
@@ -12,8 +15,7 @@
     stopOnFailure="false"
     stopOnIncomplete="false"
     stopOnSkipped="false"
-    cacheDirectory="build/.phpunit.cache"
-    beStrictAboutCoverageMetadata="true">
+>
     <coverage includeUncoveredFiles="true">
         <report>
             <clover outputFile="build/phpunit/clover.xml"/>
@@ -23,11 +25,13 @@
             <xml outputDirectory="build/phpunit/xml-coverage"/>
         </report>
     </coverage>
+
     <testsuites>
         <testsuite name="main">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
+
     <extensions>
         <bootstrap class="Nexus\PHPUnit\Tachycardia\TachycardiaExtension">
             <parameter name="time-limit" value="0.50"/>
@@ -35,11 +39,13 @@
             <parameter name="format" value="table"/>
         </bootstrap>
     </extensions>
+
     <logging>
         <testdoxHtml outputFile="build/phpunit/testdox.html"/>
         <testdoxText outputFile="build/phpunit/testdox.txt"/>
         <junit outputFile="build/phpunit/junit.xml"/>
     </logging>
+
     <php>
         <env name="XDEBUG_MODE" value="coverage"/>
         <server name="app.baseURL" value="https://example.com/"/>
@@ -62,6 +68,7 @@
         <env name="database.tests.DBPrefix" value="tests_"/>
         -->
     </php>
+
     <source>
         <include>
             <directory suffix=".php">./app/</directory>
