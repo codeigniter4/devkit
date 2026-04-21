@@ -22,7 +22,7 @@
     ],
     "homepage": "https://github.com/codeigniter4/devkit",
     "require": {
-        "php": "^8.3",
+        "php": "^8.2",
         "codeigniter/coding-standard": "^1.9",
         "fakerphp/faker": "^1.24",
         "mikey179/vfsstream": "^1.6",
@@ -32,7 +32,7 @@
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpunit": "^12.5.22 || ^13.1.7",
+        "phpunit/phpunit": "^11.5.55 || ^12.5.22 || ^13.1.7",
         "rector/rector": "^2.0",
         "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^5.0 || ^6.0"
