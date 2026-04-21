@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
     bootstrap="vendor/codeigniter4/framework/system/Test/bootstrap.php"
     backupGlobals="false"
     beStrictAboutOutputDuringTests="true"
-    beStrictAboutCoverageMetadata="true"
     cacheDirectory="build/.phpunit.cache"
     colors="true"
+    columns="max"
     displayDetailsOnAllIssues="true"
     executionOrder="random"
     failOnRisky="true"
     failOnWarning="true"
-    stopOnError="false"
-    stopOnFailure="false"
-    stopOnIncomplete="false"
-    stopOnSkipped="false"
 >
-    <coverage includeUncoveredFiles="true">
+    <coverage pathCoverage="false" ignoreDeprecatedCodeUnits="true">
         <report>
             <clover outputFile="build/phpunit/clover.xml"/>
             <html outputDirectory="build/phpunit/html"/>
@@ -46,6 +43,16 @@
         <junit outputFile="build/phpunit/junit.xml"/>
     </logging>
 
+    <source>
+        <include>
+            <directory suffix=".php">./app/</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">./app/Config</directory>
+            <directory suffix=".php">./app/Views</directory>
+        </exclude>
+    </source>
+
     <php>
         <env name="XDEBUG_MODE" value="coverage"/>
         <server name="app.baseURL" value="https://example.com/"/>
@@ -68,14 +75,4 @@
         <env name="database.tests.DBPrefix" value="tests_"/>
         -->
     </php>
-
-    <source>
-        <include>
-            <directory suffix=".php">./app/</directory>
-        </include>
-        <exclude>
-            <directory suffix=".php">./app/Config</directory>
-            <directory suffix=".php">./app/Views</directory>
-        </exclude>
-    </source>
 </phpunit>
